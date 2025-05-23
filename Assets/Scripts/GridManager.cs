@@ -17,9 +17,10 @@ public class GridManager : MonoBehaviour
     {
         for (int i = 0; i < width; i++) 
         {
-            for (int j = 0; j < height; i++)
+            for (int j = 0; j < height; j++)
             {
-                Instantiate(tile,new Vector3(i,j,0), Quaternion.identity);
+                var spwnTile = Instantiate(tile,new Vector3(i,j), Quaternion.identity);
+                spwnTile.name = $"Tile {i}x{j}";
             }
         }
     }
