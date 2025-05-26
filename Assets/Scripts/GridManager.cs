@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         GenerateGrid();
+        Debug.Log("Grid Generated");
     }
 
     void GenerateGrid()
