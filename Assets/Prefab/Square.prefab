@@ -103,6 +103,7 @@ MonoBehaviour:
   highlight: {r: 0.8117648, g: 0.8117648, b: 0.8117648, a: 0.5647059}
   tileRenderer: {fileID: 1982682986488897763}
   tileTransform: {fileID: 4661111421286086473}
+  activeObject: {fileID: -405081881548683041, guid: 49698d11b6ff0194da0c5c4c99df9622, type: 3}
 --- !u!61 &7862005866542525060
 BoxCollider2D:
   m_ObjectHideFlags: 0

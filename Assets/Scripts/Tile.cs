@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour
     public SpriteRenderer tileRenderer;
     public Transform tileTransform;
     private Color saveColor;
+    public placedObject activeObject;
 
     private void Awake()
     {
@@ -34,6 +35,11 @@ public class Tile : MonoBehaviour
     private void OnMouseExit()
     {
         tileRenderer.color = saveColor;
+    }
+
+    private void OnMouseDown()
+    {
+        Instantiate(activeObject, transform.position, Quaternion.identity);
     }
 
 

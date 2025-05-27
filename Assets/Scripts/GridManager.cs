@@ -6,12 +6,14 @@ public class GridManager : MonoBehaviour
 {
     public Tile tile;
     public int height, width;
+    public Transform cameraTransform;
 
 
     void Start()
     {
         GenerateGrid();
         Debug.Log("Grid Generated");
+        cameraTransform.position = new Vector3((float)width/2 - 0.5f, (float)height/2 - 0.5f,-10);
     }
 
     void GenerateGrid()
