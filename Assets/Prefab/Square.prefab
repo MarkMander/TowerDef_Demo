@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85247721f458da44abb19d3a6dde6150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  primaryColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
-  secondaryColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-  highlight: {r: 0.8117648, g: 0.8117648, b: 0.8117648, a: 0.5647059}
+  primaryColor: {r: 0.3898183, g: 0.5026142, b: 0.91823894, a: 1}
+  secondaryColor: {r: 0.5982753, g: 0.6183709, b: 0.69182384, a: 1}
   tileRenderer: {fileID: 1982682986488897763}
   tileTransform: {fileID: 4661111421286086473}
   placeAction:
@@ -125,6 +124,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   requestSpwn: 0
+  requestDestroy: 0
 --- !u!61 &7862005866542525060
 BoxCollider2D:
   m_ObjectHideFlags: 0

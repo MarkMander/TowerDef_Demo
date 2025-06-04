@@ -8,7 +8,7 @@ public class Tile : MonoBehaviour
 {
     public Color primaryColor;
     public Color secondaryColor;
-    public Color highlight;
+    private Color highlight;
     public SpriteRenderer tileRenderer;
     public Transform tileTransform;
     private Color saveColor;
@@ -41,6 +41,8 @@ public class Tile : MonoBehaviour
     {
         
         saveColor = tileRenderer.color;
+        highlight = tileRenderer.color;
+        highlight.a = 0.5f;
         tileRenderer.color = highlight;
         Debug.Log(this.name);
     }
