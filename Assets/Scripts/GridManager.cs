@@ -8,23 +8,22 @@ public class GridManager : MonoBehaviour
     public int height, width;
     public Transform cameraTransform;
 
+    
 
-    void Start()
+    public Dictionary<Vector2, Tile> GenerateGrid()
     {
-        GenerateGrid();
-        Debug.Log("Grid Generated");
-        cameraTransform.position = new Vector3((float)width/2 - 0.5f, (float)height/2 - 0.5f,-10);
-    }
-
-    void GenerateGrid()
-    {
+        Dictionary<Vector2, Tile> tileDict = new Dictionary<Vector2, Tile>();
         for (int i = 0; i < width; i++) 
         {
             for (int j = 0; j < height; j++)
             {
                 var spwnTile = Instantiate(tile,new Vector3(i,j), Quaternion.identity);
                 spwnTile.name = $"Tile {i}x{j}";
+                tileDict.Add(new Vector2(i,j), spwnTile);
             }
         }
+        Debug.Log("Grid Generated");
+        cameraTransform.position = new Vector3((float)width / 2 - 0.5f, (float)height / 2 - 0.5f, -10);
+        return tileDict;
     }
 }

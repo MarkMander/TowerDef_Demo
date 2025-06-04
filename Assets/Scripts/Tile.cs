@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Tile : MonoBehaviour
 {
@@ -11,7 +12,12 @@ public class Tile : MonoBehaviour
     public SpriteRenderer tileRenderer;
     public Transform tileTransform;
     private Color saveColor;
-    public placedObject activeObject;
+    public InputAction placeAction;
+    public InputAction deleteAction;
+    private bool tileFull = false;
+    public bool requestSpwn = false;
+    public bool requestDestroy = false;
+
 
     private void Awake()
     {
@@ -23,6 +29,13 @@ public class Tile : MonoBehaviour
             tileRenderer.color = secondaryColor;
         }
     }
+
+    private void Start()
+    {
+        placeAction = InputSystem.actions.FindAction("Place");
+        deleteAction = InputSystem.actions.FindAction("Delete");
+    }
+
 
     private void OnMouseEnter()
     {
@@ -39,8 +52,40 @@ public class Tile : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Instantiate(activeObject, transform.position, Quaternion.identity);
+        if (tileFull == false)
+        {
+            requestSpwn = true;
+            tileFull = true;
+            Debug.Log("spwn requested");
+        }
+        else
+        {
+            requestDestroy = true;
+            tileFull = false;
+            Debug.Log("destroy requested");
+
+        }
     }
+
+    /*private void Update()
+    {
+        if (placeAction.IsPressed() && tileFull == false)
+        {
+            var placedObjectInstance = Instantiate(activeObject, new Vector3(transform.position.x, transform.position.y, -5), Quaternion.identity);
+            placedObjectInstance.name = $"Obj";
+            tileFull = true;
+            placedObjectDict[new Vector2(transform.position.x,transform.position.y)] = placedObjectInstance;
+            Debug.Log(placedObjectDict[new Vector2(transform.position.x, transform.position.y)].name);
+            Debug.Log("object placed");
+        }
+        if (deleteAction.IsPressed() && tileFull == true)
+        {
+            //Destroy(placedObjectDict[new Vector2(transform.position.x,transform.position.y)]);
+            Debug.Log(placedObjectDict[new Vector2(transform.position.x, transform.position.y)].name);
+            tileFull = false;
+            Debug.Log("object destroyed");
+        }
+    }*/
 
 
     //add function to change the size of the tile on instantiation, for now stick with 1:1
