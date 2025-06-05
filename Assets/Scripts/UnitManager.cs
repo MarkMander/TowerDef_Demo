@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class UnitManager : MonoBehaviour
 {
@@ -17,8 +18,7 @@ public class UnitManager : MonoBehaviour
         tileDict = GridManager.GenerateGrid();
     }
 
-    // Update is called once per frame
-    void Update()
+    /* void Updat()
     {
         PollTiles();
     }
@@ -40,11 +40,19 @@ public class UnitManager : MonoBehaviour
                 entry.Value.requestDestroy = false;
             }
         }
-    }
+    }*/
 
-    void SpwnUnit(Vector2 tilePos)
+    public void SpwnUnit(Vector2 tilePos)
     {
         var unit = Instantiate(activeObject, new Vector3(tilePos.x, tilePos.y, -5), Quaternion.identity);
         unitDict.Add(tilePos, unit);
+        Debug.Log("unit spawned");
+    }
+
+    public void DestroyUnit(Vector2 tilePos)
+    {
+        Destroy(unitDict[tilePos].gameObject);
+        unitDict.Remove(tilePos);
+        Debug.Log("unit destroyed");
     }
 }
