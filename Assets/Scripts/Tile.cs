@@ -13,8 +13,6 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     public SpriteRenderer tileRenderer;
     private Color saveColor;
     private bool tileFull = false;
-    //public bool requestSpwn = false;
-    //public bool requestDestroy = false;
 
     public UnitManager unitManager;
 
@@ -39,16 +37,26 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     {
         if (tileFull == false)
         {
-            //requestSpwn = true;
-            unitManager.SpwnUnit(new Vector2(this.transform.position.x, this.transform.position.y));
-            tileFull = true;
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                unitManager.SpwnUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                tileFull = true;
+            } else if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                Debug.Log("No Unit To Delete");
+            }
         }
-        else
+        else if (tileFull == true)
         {
-            //requestDestroy = true;
-            unitManager.DestroyUnit(new Vector2(this.transform.position.x, this.transform.position.y));
-            tileFull = false;
-
+            if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                unitManager.DestroyUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                tileFull = false;
+            }
+            else if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                Debug.Log("Cannot Add Another Unit");
+            }
         }
     }
 
