@@ -7,8 +7,8 @@ public class UnitManager : MonoBehaviour
     public static UnitManager Instance; 
     public GridManager GridManager;
     public Dictionary<Vector2, Tile> tileDict = new Dictionary<Vector2, Tile>();
-    public Dictionary<Vector2, placedObject> unitDict = new Dictionary<Vector2, placedObject>();
-    public placedObject activeObject;
+    public Dictionary<Vector2, Unit> unitDict = new Dictionary<Vector2, Unit>();
+    public Unit activeObject;
     void Awake()
     {
         Instance = this;
@@ -18,35 +18,11 @@ public class UnitManager : MonoBehaviour
         tileDict = GridManager.GenerateGrid();
     }
 
-    /* void Updat()
-    {
-        PollTiles();
-    }
-
-    void PollTiles()
-    {
-        foreach (KeyValuePair<Vector2,Tile> entry in tileDict)
-        {
-            if (entry.Value.requestSpwn == true)
-            {
-                SpwnUnit(entry.Key);
-                Debug.Log("Unit Spawned");
-                entry.Value.requestSpwn = false;
-            }
-            if (entry.Value.requestDestroy == true)
-            {
-                Destroy(unitDict[entry.Key].gameObject);
-                unitDict.Remove(entry.Key);
-                entry.Value.requestDestroy = false;
-            }
-        }
-    }*/
-
     public void SpwnUnit(Vector2 tilePos)
     {
         var unit = Instantiate(activeObject, new Vector3(tilePos.x, tilePos.y, -5), Quaternion.identity);
         unitDict.Add(tilePos, unit);
-        Debug.Log("unit spawned");
+        Debug.Log($"{activeObject.name} spawned");
     }
 
     public void DestroyUnit(Vector2 tilePos)
