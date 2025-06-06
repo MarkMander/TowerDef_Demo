@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1832342533127935083}
   - component: {fileID: 1865084849548530600}
-  - component: {fileID: -405081881548683041}
+  - component: {fileID: 4199256714708372078}
   m_Layer: 0
-  m_Name: Circle_Green
+  m_Name: Unit2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.10487122, g: 0.3301887, b: 0.13097951, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-405081881548683041
+--- !u!114 &4199256714708372078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,6 +97,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4589146996506316061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948962cb19c6cca4b9bee798c09b91db, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fb3eb2bc14f3e7419067a508ca05471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

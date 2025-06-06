@@ -228,7 +228,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GridManager: {fileID: 1771637550}
-  activeObject: {fileID: -405081881548683041, guid: 49698d11b6ff0194da0c5c4c99df9622, type: 3}
+  unit1: {fileID: -405081881548683041, guid: 49698d11b6ff0194da0c5c4c99df9622, type: 3}
+  unit2: {fileID: 4199256714708372078, guid: c03f3337dc6c991439f02c86cd47b78c, type: 3}
+  unit3: {fileID: 7265394324334071339, guid: 04e6db8cd06a9b047896489f1c62bdc4, type: 3}
+  CycleUnit1:
+    m_Name: Cycle Unit 1
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 59830037-43b1-4bb6-be72-195a65d5c382
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  CycleUnit2:
+    m_Name: Cycle Unit 2
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 3ce5eefa-0e9b-438f-9a5a-dbe8aa1b89a3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  CycleUnit3:
+    m_Name: Cycle Unit 3
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 14f4df19-7bde-4d40-be00-3898c3c160f3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!4 &368491362
 Transform:
   m_ObjectHideFlags: 0

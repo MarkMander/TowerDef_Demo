@@ -1030,6 +1030,74 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Game",
+            "id": "c201810c-efa8-4953-a97b-f58cd6ec60c8",
+            "actions": [
+                {
+                    "name": "CycleUnit1",
+                    "type": "Button",
+                    "id": "b147c4eb-c91d-4cbd-b7e7-52a26fe9ac3b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CycleUnit2",
+                    "type": "Button",
+                    "id": "5fe9acd0-a298-4b21-993b-418655becb92",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "CycleUnit3",
+                    "type": "Button",
+                    "id": "e7461102-229a-4195-be90-668727213c1f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "18bee59b-8e01-4473-9e57-7a605ee0f635",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleUnit1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "106f8e04-38bc-4dba-96bf-df093c354167",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleUnit2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30ec89c9-79a5-4c04-a564-b566c4150ebf",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleUnit3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
