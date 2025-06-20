@@ -3,17 +3,22 @@ using UnityEngine;
 public abstract class Unit : MonoBehaviour
 {
     protected Color unitColor;
+    public float dmg;
 
-    protected void Init(Color color, SpriteRenderer unitRenderer)
+    protected void Init(Color color, SpriteRenderer unitRenderer, float unitDmg)
     {
-        unitColor = color;
-        unitRenderer.color = unitColor;
-        this.name = $"Unit_{unitColor}";
+        this.unitColor = color;
+        unitRenderer.color = this.unitColor;
+
+        this.dmg = unitDmg;
+
+        this.name = $"Unit_{this.dmg}";
     }
-    //protected void generateName(Color unitColor)
-    //{
-      //  this.name = $"Unit_{unitColor}";
-    //}
+
+    public float getDmg()
+    {
+        return dmg;
+    }
 
     protected void tracking()
     {

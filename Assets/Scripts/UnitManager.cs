@@ -61,13 +61,14 @@ public class UnitManager : MonoBehaviour
     {
         var unit = Instantiate(activeObject, new Vector3(tilePos.x, tilePos.y, -5), Quaternion.identity);
         unitDict.Add(tilePos, unit);
-        Debug.Log($"{activeObject.name} spawned");
+        Debug.Log($"{unit.name} spawned");
     }
 
     public void DestroyUnit(Vector2 tilePos)
     {
+        Debug.Log($"unit destroyed, delt {unitDict[tilePos].dmg} damage"); 
         Destroy(unitDict[tilePos].gameObject);
         unitDict.Remove(tilePos);
-        Debug.Log("unit destroyed");
+        
     }
 }
