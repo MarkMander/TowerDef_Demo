@@ -473,6 +473,8 @@ MonoBehaviour:
   height: 8
   width: 16
   cameraTransform: {fileID: 519420032}
+  spwnX: -2
+  enemySpwnPt: {fileID: 8958934815437208931, guid: a6e32e998e3663743badda53629de16b, type: 3}
 --- !u!4 &1771637551
 Transform:
   m_ObjectHideFlags: 0
