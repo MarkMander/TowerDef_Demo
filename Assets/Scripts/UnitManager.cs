@@ -64,9 +64,14 @@ public class UnitManager : MonoBehaviour
         Debug.Log($"{unit.name} spawned");
     }
 
+    public Unit GetUnit(Vector2 tilePos)
+    {
+        return unitDict[tilePos];
+    }
+
     public void DestroyUnit(Vector2 tilePos)
     {
-        Debug.Log($"unit destroyed, delt {unitDict[tilePos].dmg} damage"); 
+        Debug.Log($"unit destroyed"); 
         Destroy(unitDict[tilePos].gameObject);
         unitDict.Remove(tilePos);
         

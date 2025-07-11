@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1982682986488897763}
   - component: {fileID: 853213861435326641}
   - component: {fileID: 7862005866542525060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1011630141
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,27 +104,7 @@ MonoBehaviour:
   primaryColor: {r: 0.3898183, g: 0.5026142, b: 0.91823894, a: 1}
   secondaryColor: {r: 0.5982753, g: 0.6183709, b: 0.69182384, a: 1}
   tileRenderer: {fileID: 1982682986488897763}
-  tileTransform: {fileID: 4661111421286086473}
-  placeAction:
-    m_Name: Place
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 14a3c590-62e0-4811-8c5f-2ce8fc6ba9cb
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  deleteAction:
-    m_Name: Delete
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 24e584f6-0eb5-48f3-a433-de7e30c898ec
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  requestSpwn: 0
-  requestDestroy: 0
+  unitManager: {fileID: 0}
 --- !u!61 &7862005866542525060
 BoxCollider2D:
   m_ObjectHideFlags: 0

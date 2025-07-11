@@ -12,13 +12,11 @@ public class EnemySpwn : MonoBehaviour
         if (timer > spwnRate)
         {
             Debug.Log("Spwn Enemy");
-            Debug.Log(timer);
             spwnEnemyUnit();
             timer = 0;
         } else
         {
             timer = timer + Time.deltaTime;
-            Debug.Log(timer);
         }
     }
 

@@ -67,11 +67,23 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
         highlight.a = 0.5f;
         tileRenderer.color = highlight;
         Debug.Log(this.name);
+
+        if (tileFull == true)
+        {
+            Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+            attachedUnit.ToggleRange(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         tileRenderer.color = saveColor;
+
+        if (tileFull == true)
+        {
+            Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+            attachedUnit.ToggleRange(false);
+        }
     }
 
 }
