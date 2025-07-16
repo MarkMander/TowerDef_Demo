@@ -38,9 +38,15 @@ public class Unit_Green : Unit
 
     void Awake()
     {
+        Init();
         unitRenderer = GetComponent<SpriteRenderer>();
         unitRenderer.color = unitColor;
         ScaleVisableRange();
+    }
+
+    void FixedUpdate()
+    {
+        Tracking();
     }
 
 }

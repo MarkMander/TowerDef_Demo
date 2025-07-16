@@ -66,7 +66,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
         highlight = tileRenderer.color;
         highlight.a = 0.5f;
         tileRenderer.color = highlight;
-        Debug.Log(this.name);
+        //Debug.Log(this.name);
 
         if (tileFull == true)
         {
