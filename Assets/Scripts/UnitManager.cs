@@ -59,7 +59,7 @@ public class UnitManager : MonoBehaviour
 
     public void SpwnUnit(Vector2 tilePos)
     {
-        var unit = Instantiate(activeObject, new Vector3(tilePos.x, tilePos.y, -5), Quaternion.identity);
+        var unit = Instantiate(activeObject, new Vector3(tilePos.x, tilePos.y, 0), Quaternion.identity);
         unitDict.Add(tilePos, unit);
         Debug.Log($"{unit.name} spawned");
     }

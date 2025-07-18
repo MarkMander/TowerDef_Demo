@@ -7,8 +7,10 @@ public class Unit_Green : Unit
     private SpriteRenderer unitRenderer;
     public float adjustDmg = 100;
     public float adjustRange = 10;
+    public float adjustRefresh = 1;
     public SpriteRenderer rangeRendererInstance;
     public Transform rangeTransformInstance;
+    public LineRenderer lineRenderer;
 
     protected override float dmg
     {
@@ -18,6 +20,10 @@ public class Unit_Green : Unit
     protected override float range
     {
         get { return adjustRange; }
+    }
+    protected override float fireRefresh
+    {
+        get { return adjustRefresh; }
     }
 
     protected override Color unitColor
@@ -35,6 +41,11 @@ public class Unit_Green : Unit
         get { return rangeTransformInstance; }
     }
 
+    protected override LineRenderer turretRay
+    {
+        get { return lineRenderer; }
+    }
+
 
     void Awake()
     {
@@ -46,6 +57,7 @@ public class Unit_Green : Unit
 
     void FixedUpdate()
     {
+        timer = timer + Time.deltaTime;
         Tracking();
     }
 

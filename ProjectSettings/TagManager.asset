@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Grid
   - Units
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -47,6 +47,9 @@ TagManager:
     locked: 0
   - name: Units
     uniqueID: 1338869187
+    locked: 0
+  - name: Effects
+    uniqueID: 1872231657
     locked: 0
   m_RenderingLayers:
   - Default
