@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948962cb19c6cca4b9bee798c09b91db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjustDmg: 100
+  adjustDmg: 25
   adjustRange: 10
   adjustRefresh: 1
   rangeRendererInstance: {fileID: 1374840174294762122}

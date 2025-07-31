@@ -22,4 +22,13 @@ public class EnemyUnit : MonoBehaviour
         }
     }
 
+    public void TakeDmg(float dmg)
+    {
+        health -= dmg;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

@@ -189,9 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb3eb2bc14f3e7419067a508ca05471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adjustDmg: 50
+  adjustDmg: 10
   adjustRange: 8
-  adjustRefresh: 1
+  adjustRefresh: 0.25
   rangeRendererInstance: {fileID: 3486901438459152473}
   rangeTransformInstance: {fileID: 1712097647484811195}
   lineRenderer: {fileID: 3390839272818855901}

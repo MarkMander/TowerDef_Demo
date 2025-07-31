@@ -4,7 +4,7 @@ public class Unit_White : Unit
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private SpriteRenderer unitRenderer;
-    public float adjustDmg = 50;
+    public float adjustDmg = 10;
     public float adjustRange = 5;
     public float adjustRefresh = 1;
     public SpriteRenderer rangeRendererInstance;

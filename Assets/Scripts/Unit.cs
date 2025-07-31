@@ -48,12 +48,13 @@ public abstract class Unit : MonoBehaviour
         //positions[1] = new Vector3(hit.point.x,hit.point.y,0);
         positions[0] = this.transform.position;
         positions[1] = hit.transform.localPosition;
-        Debug.Log(positions[1]);
 
         turretRay.positionCount = positions.Length;
         turretRay.positionCount = positions.Length;
         turretRay.SetPositions(positions);
         turretRay.enabled = true;
+        EnemyUnit hitUnit = hit.transform.GetComponent<EnemyUnit>();
+        hitUnit.TakeDmg(this.dmg);
 
         yield return new WaitForSeconds(0.04f);
 
