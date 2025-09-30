@@ -11,8 +11,9 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     public Color secondaryColor;
     private Color highlight;
     public SpriteRenderer tileRenderer;
-    private Color saveColor;
+    //private Color saveColor;
     private bool tileFull = false;
+    private bool placeModeOn;
 
     public UnitManager unitManager;
 
@@ -32,59 +33,73 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     private void Start()
     {
         unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
+        placeModeOn = true;
+    }
+
+    void OnPlaceModeToggle()
+    {
+        placeModeOn = !placeModeOn;
+        Debug.Log($"place mode is {placeModeOn}");
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (tileFull == false)
+        if (placeModeOn)
         {
-            if (eventData.button == PointerEventData.InputButton.Left)
+            if (tileFull == false)
             {
-                unitManager.SpwnUnit(new Vector2(this.transform.position.x, this.transform.position.y));
-                tileFull = true;
-            } else if (eventData.button == PointerEventData.InputButton.Right)
-            {
-                Debug.Log("No Unit To Delete");
+                if (eventData.button == PointerEventData.InputButton.Left)
+                {
+                    unitManager.SpwnUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                    tileFull = true;
+                }
+                else if (eventData.button == PointerEventData.InputButton.Right)
+                {
+                    Debug.Log("No Unit To Delete");
+                }
             }
-        }
-        else if (tileFull == true)
-        {
-            if (eventData.button == PointerEventData.InputButton.Right)
+            else if (tileFull == true)
             {
-                unitManager.DestroyUnit(new Vector2(this.transform.position.x, this.transform.position.y));
-                tileFull = false;
-            }
-            else if (eventData.button == PointerEventData.InputButton.Left)
-            {
-                Debug.Log("Cannot Add Another Unit");
+                if (eventData.button == PointerEventData.InputButton.Right)
+                {
+                    unitManager.DestroyUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                    tileFull = false;
+                }
+                else if (eventData.button == PointerEventData.InputButton.Left)
+                {
+                    Debug.Log("Cannot Add Another Unit");
+                }
             }
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        saveColor = tileRenderer.color;
-        highlight = tileRenderer.color;
-        highlight.a = 0.5f;
-        tileRenderer.color = highlight;
-        //Debug.Log(this.name);
-
-        if (tileFull == true)
+        if (placeModeOn)
         {
-            Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
-            attachedUnit.ToggleRange(true);
+            //saveColor = tileRenderer.color;
+            highlight = tileRenderer.color;
+            highlight.a = 0.5f;
+            tileRenderer.color = highlight;
+            //Debug.Log(this.name);
+
+            if (tileFull == true)
+            {
+                Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                attachedUnit.ToggleRange(true);
+            }
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        tileRenderer.color = saveColor;
+            tileRenderer.color = primaryColor;
 
-        if (tileFull == true)
-        {
-            Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
-            attachedUnit.ToggleRange(false);
-        }
+            if (tileFull == true)
+            {
+                Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                attachedUnit.ToggleRange(false);
+            }
     }
 
 }

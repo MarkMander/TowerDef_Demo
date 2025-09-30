@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404883606}
   - component: {fileID: 404883605}
+  - component: {fileID: 404883607}
   m_Layer: 0
   m_Name: UnitManager
   m_TagString: UnitManager
@@ -152,33 +153,6 @@ MonoBehaviour:
   unit1: {fileID: -405081881548683041, guid: 49698d11b6ff0194da0c5c4c99df9622, type: 3}
   unit2: {fileID: 7265394324334071339, guid: 04e6db8cd06a9b047896489f1c62bdc4, type: 3}
   unit3: {fileID: 4199256714708372078, guid: c03f3337dc6c991439f02c86cd47b78c, type: 3}
-  CycleUnit1:
-    m_Name: Cycle Unit 1
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6cec1b9c-c27b-41a1-8689-35562247f735
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  CycleUnit2:
-    m_Name: Cycle Unit 2
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 84bc476c-556f-4d48-9955-94152d7599d7
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  CycleUnit3:
-    m_Name: Cycle Unit 3
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 60dd7691-bf7d-49aa-ae33-2454b0b39839
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!4 &404883606
 Transform:
   m_ObjectHideFlags: 0
@@ -194,6 +168,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &404883607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404883604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 55a61ef714812bf47b6f1d0f212440c1, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: c201810c-efa8-4953-a97b-f58cd6ec60c8
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &679540132
 GameObject:
   m_ObjectHideFlags: 0

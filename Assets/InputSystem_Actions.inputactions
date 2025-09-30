@@ -1079,6 +1079,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "PlaceModeToggle",
+                    "type": "Button",
+                    "id": "b1e3c2e4-80db-496a-95d2-bee52756d665",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1178,6 +1187,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9515e6cb-052f-400f-919d-5a5a6dc85da8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaceModeToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

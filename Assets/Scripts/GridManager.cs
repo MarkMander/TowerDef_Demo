@@ -6,11 +6,6 @@ public class GridManager : MonoBehaviour
 {
     public Tile tile;
     public int height, width;
-    //public Transform cameraTransform;
-    //public float spwnX = -5;
-    //public EnemySpwn enemySpwnPt;
-
-    
 
     public Dictionary<Vector2, Tile> GenerateGrid()
     {
@@ -25,10 +20,6 @@ public class GridManager : MonoBehaviour
             }
         }
         Debug.Log("Grid Generated");
-
-        //Instantiate(enemySpwnPt, new Vector3(spwnX,(float)height / 2 - 0.5f), Quaternion.identity);
-
-        //cameraTransform.position = new Vector3((float)width / 2 - 0.5f, (float)height / 2 - 0.5f, -10);
         return tileDict;
     }
 }

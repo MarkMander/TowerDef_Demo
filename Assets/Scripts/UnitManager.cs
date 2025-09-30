@@ -14,10 +14,6 @@ public class UnitManager : MonoBehaviour
     public Unit unit2;
     public Unit unit3;
 
-    public InputAction CycleUnit1;
-    public InputAction CycleUnit2;
-    public InputAction CycleUnit3;
-
     void Awake()
     {
         Instance = this;
@@ -27,34 +23,22 @@ public class UnitManager : MonoBehaviour
         tileDict = GridManager.GenerateGrid();
 
         activeObject = unit1;
-
-        CycleUnit1 = InputSystem.actions.FindAction("CycleUnit1");
-        CycleUnit2 = InputSystem.actions.FindAction("CycleUnit2");
-        CycleUnit3 = InputSystem.actions.FindAction("CycleUnit3");
     }
 
-    private void Update()
+    void OnCycleUnit1()
     {
-        checkUnitCycle();        
+        activeObject = unit1;
+        Debug.Log("Unit1 is active unit");
     }
-
-    private void checkUnitCycle()
+    void OnCycleUnit2()
     {
-        if (CycleUnit1.IsPressed())
-        {
-            activeObject = unit1;
-            Debug.Log("Unit1 is active unit");
-        }
-        else if (CycleUnit2.IsPressed())
-        {
-            activeObject = unit2;
-            Debug.Log("Unit2 is active unit");
-        }
-        else if (CycleUnit3.IsPressed())
-        {
-            activeObject = unit3;
-            Debug.Log("Unit3 is active unit");
-        }
+        activeObject = unit2;
+        Debug.Log("Unit2 is active unit");
+    }
+    void OnCycleUnit3()
+    {
+        activeObject = unit3;
+        Debug.Log("Unit3 is active unit");
     }
 
     public void SpwnUnit(Vector2 tilePos)
