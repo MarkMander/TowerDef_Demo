@@ -17,6 +17,9 @@ public class CameraControl : MonoBehaviour
     public float zoomSmoothing = 0.3f;
     private float refFloat = 0;
 
+    private float zoomScale;
+    private float initZoom;
+
     [SerializeField] private Camera cam;
 
 
@@ -25,6 +28,7 @@ public class CameraControl : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cam = rb.GetComponent<Camera>();
         zoom = cam.orthographicSize;
+        initZoom = cam.orthographicSize;
     }
 
     void OnMoveCamera(InputValue moveValue)
@@ -45,8 +49,10 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.linearVelocity = Vector3.SmoothDamp(rb.linearVelocity, new Vector3(spd*moveX, spd*moveY, 0), ref refVector, motionSmoothing);
         cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref refFloat, zoomSmoothing);
+        zoomScale = zoom/initZoom;
+        rb.linearVelocity = Vector3.SmoothDamp(rb.linearVelocity, new Vector3(spd*zoomScale*moveX, spd*zoomScale*moveY, 0), ref refVector, motionSmoothing);
+        
     }
 
 
