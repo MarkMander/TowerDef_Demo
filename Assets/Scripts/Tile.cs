@@ -24,7 +24,8 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
             tileRenderer.color = primaryColor;
         } else
         {
-            tileRenderer.color = secondaryColor;
+            //tileRenderer.color = secondaryColor;
+            tileRenderer.color = primaryColor; //testing to make everything one color instead of checkerboard
         }
     }
 
