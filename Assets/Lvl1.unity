@@ -391,6 +391,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd: 15
   motionSmoothing: 0.2
+  minZoom: 2
+  maxZoom: 20
+  zoomMult: 2
+  zoomSmoothing: 0.3
+  cam: {fileID: 0}
 --- !u!1 &1950292787
 GameObject:
   m_ObjectHideFlags: 0
