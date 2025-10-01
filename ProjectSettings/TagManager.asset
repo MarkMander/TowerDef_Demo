@@ -42,14 +42,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Grid
-    uniqueID: 1011630141
+  - name: Background
+    uniqueID: 1285130949
+    locked: 0
+  - name: TileMap
+    uniqueID: 2280936567
+    locked: 0
+  - name: Path
+    uniqueID: 841619877
     locked: 0
   - name: Units
     uniqueID: 1338869187
     locked: 0
   - name: Effects
     uniqueID: 1872231657
+    locked: 0
+  - name: Grid
+    uniqueID: 1011630141
     locked: 0
   m_RenderingLayers:
   - Default

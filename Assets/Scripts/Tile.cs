@@ -8,32 +8,20 @@ using UnityEngine.EventSystems;
 public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Color primaryColor;
-    public Color secondaryColor;
     private Color highlight;
     public SpriteRenderer tileRenderer;
-    //private Color saveColor;
     private bool tileFull = false;
     private bool placeModeOn;
 
-    public UnitManager unitManager;
-
-
-    private void Awake()
-    {
-        if ((this.transform.position.x % 2 == 0 && this.transform.position.y % 2 == 0) || (this.transform.position.x % 2 == 1 && this.transform.position.y % 2 == 1))
-        {
-            tileRenderer.color = primaryColor;
-        } else
-        {
-            //tileRenderer.color = secondaryColor;
-            tileRenderer.color = primaryColor; //testing to make everything one color instead of checkerboard
-        }
-    }
+    private UnitManager unitManager;
 
     private void Start()
     {
         unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
         placeModeOn = true;
+        tileRenderer.color = primaryColor;
+        highlight = tileRenderer.color;
+        highlight.a = 0.5f;
     }
 
     void OnPlaceModeToggle()
@@ -77,11 +65,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     {
         if (placeModeOn)
         {
-            //saveColor = tileRenderer.color;
-            highlight = tileRenderer.color;
-            highlight.a = 0.5f;
             tileRenderer.color = highlight;
-            //Debug.Log(this.name);
 
             if (tileFull == true)
             {
