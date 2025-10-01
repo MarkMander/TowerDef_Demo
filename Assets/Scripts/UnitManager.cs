@@ -6,13 +6,17 @@ using UnityEngine.InputSystem;
 public class UnitManager : MonoBehaviour
 {
     public static UnitManager Instance; 
-    public GridManager GridManager;
+
+    private GridManager gridManager;
     public Dictionary<Vector2, Tile> tileDict = new Dictionary<Vector2, Tile>();
     public Dictionary<Vector2, Unit> unitDict = new Dictionary<Vector2, Unit>();
     private Unit activeObject;
     public Unit unit1;
     public Unit unit2;
     public Unit unit3;
+    public Transform[] path;
+    private EnemySpwn enemySpwn;
+
 
     void Awake()
     {
@@ -20,8 +24,11 @@ public class UnitManager : MonoBehaviour
     }
     void Start()
     {
-        tileDict = GridManager.GenerateGrid();
+        
+        enemySpwn = GameObject.FindGameObjectWithTag("EnemySpwn").GetComponent<EnemySpwn>();
+        gridManager = GameObject.FindGameObjectWithTag("GridManager").GetComponent<GridManager>();
 
+        tileDict = gridManager.GenerateGrid();
         activeObject = unit1;
     }
 

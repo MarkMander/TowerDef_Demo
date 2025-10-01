@@ -17,7 +17,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
 
     private void Start()
     {
-        unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
+        //unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
         placeModeOn = true;
         tileRenderer.color = primaryColor;
         highlight = tileRenderer.color;
@@ -38,7 +38,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
             {
                 if (eventData.button == PointerEventData.InputButton.Left)
                 {
-                    unitManager.SpwnUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                    UnitManager.Instance.SpwnUnit(new Vector2(this.transform.position.x, this.transform.position.y));
                     tileFull = true;
                 }
                 else if (eventData.button == PointerEventData.InputButton.Right)
