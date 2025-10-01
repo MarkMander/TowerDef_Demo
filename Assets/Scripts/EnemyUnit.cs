@@ -7,11 +7,11 @@ public class EnemyUnit : MonoBehaviour
     public float unitSpd = 3;
     private Transform targetPath;
     private int pathIdx = 0;
+    public float baseDmg = 100;
 
     void Start()
     {
-        targetPath = UnitManager.Instance.path[pathIdx]; 
-        //rBody.linearVelocity = new Vector3(unitSpd,0);
+        targetPath = UnitManager.Instance.path[pathIdx];
     }
 
     void Update()
@@ -19,7 +19,7 @@ public class EnemyUnit : MonoBehaviour
         if (Vector2.Distance(targetPath.position, this.transform.position) <= 0.1f)
         {
             pathIdx++;
-            if (pathIdx > UnitManager.Instance.path.Length)
+            if (pathIdx >= UnitManager.Instance.path.Length)
             {
                 Destroy(gameObject);
                 return;
@@ -29,11 +29,6 @@ public class EnemyUnit : MonoBehaviour
             }
             
         }
-        //if (false)//collides with base collider
-        //{
-        //Debug.Log("Enemy has reached base");
-        //Destroy(gameObject);
-        //}
     }
 
     void FixedUpdate()
@@ -49,6 +44,18 @@ public class EnemyUnit : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.layer == 9)
+        {
+            Debug.Log($"{collision.gameObject.name} has been hit");
+            UnitManager.Instance.DmgBase(baseDmg);
+            Destroy(gameObject);
+        }
+        
     }
 
 }

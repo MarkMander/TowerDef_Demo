@@ -13,11 +13,9 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     private bool tileFull = false;
     private bool placeModeOn;
 
-    private UnitManager unitManager;
 
     private void Start()
     {
-        //unitManager = GameObject.FindGameObjectWithTag("UnitManager").GetComponent<UnitManager>();
         placeModeOn = true;
         tileRenderer.color = primaryColor;
         highlight = tileRenderer.color;
@@ -50,7 +48,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
             {
                 if (eventData.button == PointerEventData.InputButton.Right)
                 {
-                    unitManager.DestroyUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                    UnitManager.Instance.DestroyUnit(new Vector2(this.transform.position.x, this.transform.position.y));
                     tileFull = false;
                 }
                 else if (eventData.button == PointerEventData.InputButton.Left)
@@ -69,7 +67,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
 
             if (tileFull == true)
             {
-                Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                Unit attachedUnit = UnitManager.Instance.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
                 attachedUnit.ToggleRange(true);
             }
         }
@@ -81,7 +79,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
 
             if (tileFull == true)
             {
-                Unit attachedUnit = unitManager.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
+                Unit attachedUnit = UnitManager.Instance.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
                 attachedUnit.ToggleRange(false);
             }
     }

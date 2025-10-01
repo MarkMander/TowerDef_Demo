@@ -247,7 +247,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4528,10 +4528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
-    - target: {fileID: 4383888499890931615, guid: aa466bf4d746ed3418335c091096ff39, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 8241893404191166101, guid: aa466bf4d746ed3418335c091096ff39, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.5
@@ -4575,52 +4571,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4383888499890931615, guid: aa466bf4d746ed3418335c091096ff39, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7775314878874713958}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa466bf4d746ed3418335c091096ff39, type: 3}
---- !u!1 &7775314878874713957 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4383888499890931615, guid: aa466bf4d746ed3418335c091096ff39, type: 3}
-  m_PrefabInstance: {fileID: 7775314878874713956}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &7775314878874713958
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7775314878874713957}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

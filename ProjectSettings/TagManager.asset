@@ -7,6 +7,7 @@ TagManager:
   - UnitManager
   - GridManager
   - EnemySpwn
+  - Base
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Grid
   - Units
   - Enemy
-  - 
+  - Building
   - 
   - 
   - 

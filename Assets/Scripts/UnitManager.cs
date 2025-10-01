@@ -16,6 +16,7 @@ public class UnitManager : MonoBehaviour
     public Unit unit3;
     public Transform[] path;
     private EnemySpwn enemySpwn;
+    private Base bse;
 
 
     void Awake()
@@ -27,6 +28,7 @@ public class UnitManager : MonoBehaviour
         
         enemySpwn = GameObject.FindGameObjectWithTag("EnemySpwn").GetComponent<EnemySpwn>();
         gridManager = GameObject.FindGameObjectWithTag("GridManager").GetComponent<GridManager>();
+        bse = GameObject.FindGameObjectWithTag("Base").GetComponent<Base>();
 
         tileDict = gridManager.GenerateGrid();
         activeObject = unit1;
@@ -66,5 +68,10 @@ public class UnitManager : MonoBehaviour
         Destroy(unitDict[tilePos].gameObject);
         unitDict.Remove(tilePos);
         
+    }
+
+    public void DmgBase(float dmg)
+    {
+        bse.TakeDmg(dmg);
     }
 }

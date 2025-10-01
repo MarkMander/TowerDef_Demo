@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   rBody: {fileID: 5343393214456229199}
-  unitSpd: 3
-  deadzone: 20
+  unitSpd: 5
+  baseDmg: 500
 --- !u!50 &5343393214456229199
 Rigidbody2D:
   serializedVersion: 5
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1338869187
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 9c7230eecdbb88d49b9482945d033290, type: 3}
   m_Color: {r: 0.9433962, g: 0.5606977, b: 0.8678694, a: 1}
