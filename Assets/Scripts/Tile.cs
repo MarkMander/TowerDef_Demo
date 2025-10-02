@@ -12,6 +12,8 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
     public SpriteRenderer tileRenderer;
     private bool tileFull = false;
     private bool placeModeOn;
+    private bool validTile = false;
+    private Collider2D tileCollider;
 
 
     private void Start()
@@ -20,17 +22,31 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
         tileRenderer.color = primaryColor;
         highlight = tileRenderer.color;
         highlight.a = 0.5f;
+
+        tileCollider = GetComponent<Collider2D>();
+        List<Collider2D> colliders = new List<Collider2D>();
+        int num = tileCollider.Overlap(colliders);
+        if (num > 0)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                if (colliders[i].gameObject.layer == 10) 
+                {
+                    validTile = true;
+                }
+            }
+        }
+        
     }
 
     void OnPlaceModeToggle()
     {
         placeModeOn = !placeModeOn;
-        Debug.Log($"place mode is {placeModeOn}");
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (placeModeOn)
+        if (placeModeOn && validTile)
         {
             if (tileFull == false)
             {
@@ -61,7 +77,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (placeModeOn)
+        if (placeModeOn && validTile)
         {
             tileRenderer.color = highlight;
 
@@ -75,6 +91,8 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (validTile)
+        {
             tileRenderer.color = primaryColor;
 
             if (tileFull == true)
@@ -82,6 +100,17 @@ public class Tile : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, I
                 Unit attachedUnit = UnitManager.Instance.GetUnit(new Vector2(this.transform.position.x, this.transform.position.y));
                 attachedUnit.ToggleRange(false);
             }
+        }        
     }
+
+    /*private void OnTriggerStay2D(Collider2D collision)
+    {
+        //Debug.Log("tile trigger triggered");
+        Debug.Log($"layer {collision.gameObject.layer}");
+        if (collision.gameObject.layer == 10)
+        {
+            validTile = false;
+        }
+    }*/
 
 }

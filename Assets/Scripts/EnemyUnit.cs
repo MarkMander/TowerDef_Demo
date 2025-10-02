@@ -48,14 +48,12 @@ public class EnemyUnit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.gameObject.layer == 9)
         {
             Debug.Log($"{collision.gameObject.name} has been hit");
             UnitManager.Instance.DmgBase(baseDmg);
             Destroy(gameObject);
         }
-        
     }
 
 }

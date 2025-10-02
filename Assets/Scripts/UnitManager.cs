@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 public class UnitManager : MonoBehaviour
 {
@@ -18,14 +19,12 @@ public class UnitManager : MonoBehaviour
     private EnemySpwn enemySpwn;
     private Base bse;
 
-
     void Awake()
     {
         Instance = this;
     }
     void Start()
     {
-        
         enemySpwn = GameObject.FindGameObjectWithTag("EnemySpwn").GetComponent<EnemySpwn>();
         gridManager = GameObject.FindGameObjectWithTag("GridManager").GetComponent<GridManager>();
         bse = GameObject.FindGameObjectWithTag("Base").GetComponent<Base>();
